@@ -1,1 +1,5 @@
-pytz
+pytz       # ★同内容タイムゾーン処理に特化したライブラリ
+fastapi    # ●ECSのみ：HTTPサーバーフレームワーク 
+uvicorn    # ●ECSのみ：ASGIサーバー（FastAPI実行用）
+pydantic   # ●ECSのみ：データバリデーション用 (FastAPIが依存)
+requests   # ●ECSのみ：DockerfileのHEALTHCHECKで使用
