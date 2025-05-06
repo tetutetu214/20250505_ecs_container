@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 CMD ["python", "app.py"]
 
 # ECSヘルスチェック用
-HEALTHCHECK --interval=30s --timeout=10s   CMD python -c "import requests; requests.get('http://localhost:8080/health')"
+HEALTHCHECK --interval=30s --timeout=10s   CMD python -c "import requests; requests.get('http://localhost:8080/health').raise_for_status()"

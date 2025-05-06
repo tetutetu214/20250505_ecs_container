@@ -1,0 +1,1 @@
+{"statusCode":200,"body":{"greeting":"Hello from ECS on Fargate!","event":{"message":"ECS on Fargate","key":"value"},"requested_at":"2025-05-06T22:07:29.944826+09:00","display_time":"2025-05-06 22:07:29 JST","server_type":"ECS"}}

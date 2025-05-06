@@ -1,0 +1,27 @@
+{
+  "family": "lambda-to-ecs-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::522436770652:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "lambda-to-ecs-container",
+      "image": "522436770652.dkr.ecr.us-east-1.amazonaws.com/lambda-to-ecs:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "healthCheck": {
+        "command": ["CMD-SHELL", "python -c \"import requests; requests.get('http://localhost:8080/health').raise_for_status()\""],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3
+      }
+    }
+  ]
+}
