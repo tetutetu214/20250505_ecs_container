@@ -1,4 +1,4 @@
-# 汎用的なPythonイメージを使用（Lambda特化じゃない）
+# 汎用的なPythonイメージを使用
 FROM public.ecr.aws/docker/library/python:3.11-slim
 
 # 作業ディレクトリを設定
